@@ -1,0 +1,68 @@
+<?php defined('SYSPATH') or die('No direct access allowed.');
+
+return array(
+    'about' => array(
+        'label' => 'About',
+        'type' => 'single',
+        'fields' => array(
+            'main_blurb' => array(
+                'label' => 'Main Blurb',
+                'type' => 'textarea',
+                'rules' => array(
+                
+                ),
+                'class' => 'ckeditor',
+                
+            ),
+            'title' => array(
+                'label' => 'Title',
+                'type' => 'input',
+                'rules' => array(
+                
+                ),
+                
+            )
+        )
+    ),
+    'team_members' => array(
+        'label' => 'Team Members',
+        'type' => 'multiple',
+        'fields' => array(
+            'name' => array(
+                'label' => 'Name',
+                'type' => 'input',
+                'rules' => array(
+                    'not_empty' => true
+                ),
+                'class' => 'span6',
+                'table_display' => true
+            ),
+            'title' => array(
+                'label' => 'Job Title',
+                'type' => 'input',
+                'rules' => array(
+                    'not_empty' => true
+                ),
+                'table_display' => true
+            ),
+            'email' => array(
+                'label' => 'Email',
+                'type' => 'input',
+                'rules' => array(
+                    'not_empty' => true,
+                    'email' => true
+                ),
+                'table_display' => true
+            ),
+            'desc' => array(
+                'label' => 'Description',
+                'type' => 'textarea',
+                'rules' => array(
+                
+                ),
+                'class' => 'ckeditor',
+                'table_display' => false
+            )
+        )
+    )
+);

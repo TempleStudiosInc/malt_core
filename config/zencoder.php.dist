@@ -1,0 +1,75 @@
+<?php defined('SYSPATH') or die('No direct access allowed.');
+
+return array(
+    'api_key' => 'api_key',
+    'output' => array(
+        array(
+            'label' => 'small 320',
+            'base_url' => 's3://{{VIDEO_BUCKET}}/assets/{{ASSET_ID}}/',
+            'filename' => '{{VIDEO_NAME}}_320.mp4',
+            'format' => 'mp4',
+            'video_codec' => 'h264',
+            'audio_codec' => 'aac',
+            'height' => 320,
+            'aspect_mode' => 'preserve',
+            'quality' => 2,
+            'audio_quality' => 2,
+            'public' => 1,
+            'notifications' => array(
+                array(
+                    'url' => 'http://{{SITE_URL}}/zencoder/notification/{{ASSET_ID}}',
+                    'format' => 'json',
+                )
+            )
+        ),
+        array(
+            'label' => 'medium 480',
+            'base_url' => 's3://{{VIDEO_BUCKET}}/assets/{{ASSET_ID}}/',
+            'filename' => '{{VIDEO_NAME}}_480.mp4',
+            'format' => 'mp4',
+            'video_codec' => 'h264',
+            'audio_codec' => 'aac',
+            'height' => 480,
+            'aspect_mode' => 'preserve',
+            'quality' => 3,
+            'audio_quality' => 3,
+            'public' => 1,
+            'notifications' => array(
+                array(
+                    'url' => 'http://{{SITE_URL}}/zencoder/notification/{{ASSET_ID}}',
+                    'format' => 'json',
+                )
+            )
+        ),
+        array(
+            'label' => 'high 720',
+            'base_url' => 's3://{{VIDEO_BUCKET}}/assets/{{ASSET_ID}}/',
+            'filename' => '{{VIDEO_NAME}}_720.mp4',
+            'format' => 'mp4',
+            'video_codec' => 'h264',
+            'audio_codec' => 'aac',
+            'height' => 720,
+            'aspect_mode' => 'preserve',
+            'quality' => 3,
+            'audio_quality' => 3,
+            'public' => 1,
+            'thumbnails' => array(
+                'format' => 'jpg',
+                'number' => 1,
+                'times' => array(
+                    10
+                ),
+                'filename' => '{{VIDEO_NAME}}',
+                'height' => 800,
+                'base_url' => 's3://{{VIDEO_BUCKET}}/assets/{{ASSET_ID}}/',
+                'public' => 1
+            ),
+            'notifications' => array(
+                array(
+                    'url' => 'http://{{SITE_URL}}/zencoder/notification/{{ASSET_ID}}',
+                    'format' => 'json',
+                )
+            )
+        )
+    )
+);
